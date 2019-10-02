@@ -12,8 +12,7 @@ public class Note {
 
     }
 
-    public Note(int noteId, int bookId, String note) {
-        this.noteId = noteId;
+    public Note(int bookId, String note) {
         this.bookId = bookId;
         this.note = note;
     }

@@ -1,4 +1,9 @@
 package com.toad.noteservice.controller;
+
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.toad.noteservice.dao.NoteDao;
 import com.toad.noteservice.model.Note;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -6,8 +11,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+
 @RestController
+@RequestMapping("/notes")
 public class NoteServiceController {
+
     // Properties
     @Autowired
     private NoteDao noteDao;
@@ -52,4 +60,5 @@ public class NoteServiceController {
     public void deleteNote(@PathVariable int id) {
         noteDao.deleteNote(id);
     }
+
 }

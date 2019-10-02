@@ -1,0 +1,243 @@
+openapi: 3.0.0
+info:
+  title: Book System Project - Team TOAD 
+  description: The purpose of this project is for you to practice implementing REST microservices, queue producers and consumers, and using Feign web service clients with minimal guidance. Use the tutorials from this module as guides and ask questions of the instructional staff.
+  version: "1.0"
+servers: 
+- url: http://localhost:8080
+  description: Local dev server
+tags: 
+- name: "Books"
+  description: "Book provided routes"
+- name: "Notes"
+  description: "Note provited routes"
+  
+
+# Books routes
+paths:
+  /books:
+    get:
+      tags:
+      - "Books"
+      summary: returns a list of all books.
+      description: this will return all the books available in the database.
+      parameters: []
+      responses:
+        '200':
+          description: A JSON array of books.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/books'
+  
+    post:
+      tags:
+      - "Books"
+      summary: creates a new book.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/books'
+      responses:
+        '201':
+          description: Created a new book.
+                  
+  /books/{bookId}:
+    get:
+      tags:
+      - "Books"
+      summary: returns the book specified by the id.
+      parameters: 
+        - name: bookId
+          in: path
+          required: true
+          description: id of the book you would like to get.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Book object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/books'
+  
+    put:
+      tags:
+      - "Books"
+      summary: updates an existing book.
+      description: updates a book by id.
+      parameters: 
+        - name: bookId
+          in: path
+          required: true
+          description: id of the book you would like to update.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Update book object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/books'
+                
+    delete:
+      tags: 
+      - "Books"
+      summary: Deletes an existing book.
+      description: deletes a book by id.
+      parameters: 
+        - name: bookId
+          in: path
+          required: true
+          description: id of the book you would like to delete.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Delete book object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/books'
+
+# Note routes
+
+  /notes:
+    get:
+      tags:
+      - "Notes"
+      summary: returns a list of all notes.
+      description: this will return all the notes available in the database.
+      parameters: []
+      responses:
+        '200':
+          description: A JSON array of notes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/notes'
+  
+    post:
+      tags:
+      - "Notes"
+      summary: creates a new note.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notes'
+      responses:
+        '201':
+          description: Created a new note.
+                  
+  /notes/{noteId}:
+    get:
+      tags:
+      - "Notes"
+      summary: returns the note specified by the id.
+      parameters: 
+        - name: noteId
+          in: path
+          required: true
+          description: id of the note you would like to get.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Note object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notes'
+  
+    put:
+      tags:
+      - "Notes"
+      summary: updates an existing note.
+      description: updates a note by id.
+      parameters: 
+        - name: noteId
+          in: path
+          required: true
+          description: id of the note you would like to update.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Update note object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notes'
+  
+    delete:
+      tags: 
+      - "Notes"
+      summary: Deletes an existing note.
+      description: deletes a note by id.
+      parameters: 
+        - name: noteId
+          in: path
+          required: true
+          description: id of the note you would like to delete.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Delete note object from current id.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notes'
+    
+  /notes/book/{bookId}: 
+    get:
+      tags: 
+      - "Notes"
+      summary: returns the note specified by the bookId.
+      parameters: 
+        - name: bookId
+          in: path
+          required: true
+          description: bookId of the note you would like to get.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Console object from current manufacturer.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notes'
+
+      
+components:
+  schemas:
+    books:
+      type: object
+      properties:
+        bookId:
+          type: integer
+        title:
+          type: string
+        author:
+          type: string
+          
+    notes:
+      type: object
+      properties:
+        noteId:
+          type: integer
+        bookId:
+          type: integer
+        note:
+          type: string

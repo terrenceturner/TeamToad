@@ -50,8 +50,7 @@ public class BookDaoJdbcTemplateImpl implements BookDao {
         return temp.query(SELECT_ALL_BOOKS,this::MapRowToBook);
     }
     @Override
-    public void updateBook(int bookId) {
-        Book book = getBookbyId(bookId);
+    public void updateBook(Book book) {
         temp.update(UPDATE_BOOK,
                 book.getTitle(),
                 book.getAuthor(),

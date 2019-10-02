@@ -10,7 +10,7 @@ public interface BookDao {
 
     public Book getBookbyId(int bookId);
 
-    public void updateBook(int bookId);
+    public void updateBook(Book book);
 
     public Book createBook(Book book);
 

@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -36,29 +39,48 @@ public class BookDaoJdbcTemplateImplTest {
     public void createBook() {
         Book book1 = bookDao.createBook(book);
 
-        assertEquals(1,book1.getBookId());
         assertEquals(book.getAuthor(),book1.getAuthor());
         assertEquals(book.getTitle(),book1.getTitle());
     }
 
     @Test
     public void getBookbyId() {
+        Book book1 = bookDao.createBook(book);
 
+        Book book2 =  bookDao.getBookbyId(book.getBookId());
+
+        assertEquals(book1,book2);
     }
 
     @Test
     public void getAllBooks() {
+        List<Book> bList = new ArrayList<>();
+        bList.add(bookDao.createBook(book));
+
+        assertEquals(1,bList.size());
     }
 
     @Test
     public void updateBook() {
+        Book book1 = bookDao.createBook(book);
+
+        book1.setTitle("new title");
+
+        bookDao.updateBook(book1);
+        Book book2 = bookDao.getBookbyId(book1.getBookId());
+
+        assertEquals(book1,book2);
+
+
     }
 
     @Test
     public void deleteBook() {
-    }
+        book = bookDao.createBook(book);
 
-    @Test
-    public void mapRowToBook() {
+        bookDao.deleteBook(book.getBookId());
+        List<Book> bList = bookDao.getAllBooks();
+
+        assertEquals(0,bList.size());
     }
 }

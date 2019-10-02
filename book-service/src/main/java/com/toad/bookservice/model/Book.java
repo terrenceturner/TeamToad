@@ -1,4 +1,4 @@
-package com.toad.bookservice.dto;
+package com.toad.bookservice.model;
 
 
 import java.util.Objects;

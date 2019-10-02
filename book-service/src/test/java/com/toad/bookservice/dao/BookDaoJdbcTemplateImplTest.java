@@ -70,8 +70,7 @@ public class BookDaoJdbcTemplateImplTest {
         Book book2 = bookDao.getBookbyId(book1.getBookId());
 
         assertEquals(book1,book2);
-
-
+        
     }
 
     @Test

@@ -71,7 +71,7 @@ public class ServiceLayer {
         //send note to queue
     };
 
-    public Book createBook(BookViewModel bvm){
+    public BookViewModel createBook(BookViewModel bvm){
 
         Book book = new Book();
         book.setAuthor(bvm.getAuthor());

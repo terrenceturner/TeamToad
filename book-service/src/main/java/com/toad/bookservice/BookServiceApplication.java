@@ -10,8 +10,9 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableFeignClients
+@EnableDiscoveryClient
+
 public class BookServiceApplication {
 	@Bean
 	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){

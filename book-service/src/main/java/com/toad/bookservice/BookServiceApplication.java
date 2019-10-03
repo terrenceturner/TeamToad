@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
+
 public class BookServiceApplication {
 	@Bean
 	public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){

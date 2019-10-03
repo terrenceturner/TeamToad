@@ -1,9 +1,8 @@
-package com.toad.noteservice.model;
+package com.toad.bookservice.util.messages;
 
 import java.util.Objects;
 
 public class Note {
-
     private int noteId;
     private int bookId;
     private String note;
@@ -12,7 +11,8 @@ public class Note {
 
     }
 
-    public Note(int bookId, String note) {
+    public Note(int noteId, int bookId, String note) {
+        this.noteId = noteId;
         this.bookId = bookId;
         this.note = note;
     }
@@ -55,6 +55,5 @@ public class Note {
     public int hashCode() {
         return Objects.hash(noteId, bookId, note);
     }
-
 
 }

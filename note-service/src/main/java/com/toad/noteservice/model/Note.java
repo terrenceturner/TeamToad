@@ -1,21 +1,27 @@
 package com.toad.noteservice.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
 import java.util.Objects;
 
 public class Note {
 
+
     private int noteId;
+
     private int bookId;
     private String note;
 
-    public Note(){
-
-    }
+    public Note(){}
 
     public Note(int bookId, String note) {
         this.bookId = bookId;
         this.note = note;
     }
+
 
     public int getNoteId() {
         return noteId;

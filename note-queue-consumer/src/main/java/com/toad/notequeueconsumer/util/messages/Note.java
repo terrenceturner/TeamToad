@@ -8,14 +8,6 @@ public class Note {
     private int bookId;
     private String note;
 
-    public Note(){
-
-    }
-
-    public Note(int bookId, String note) {
-        this.bookId = bookId;
-        this.note = note;
-    }
 
     public int getNoteId() {
         return noteId;

@@ -18,7 +18,7 @@ public class NoteDaoTemplateImpl implements NoteDao{
     private static final String INSERT_NOTE =
             "insert into note (book_id, note) values (?, ?)";
     private static final String SELECT_NOTE =
-            "select * from note where note_id = ?";
+            "select * from note where book_id = ?";
     private static final String SELECT_ALL_NOTES =
             "select * from note";
     private static final String SELECT_NOTES_BY_BOOK_SQL =

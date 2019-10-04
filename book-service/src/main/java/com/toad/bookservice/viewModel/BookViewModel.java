@@ -49,5 +49,13 @@ public class BookViewModel {
         this.note = note;
     }
 
-
+    @Override
+    public String toString() {
+        return "BookViewModel{" +
+                "bookId=" + bookId +
+                ", author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", note=" + note +
+                '}';
+    }
 }

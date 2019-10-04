@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/TeamToad.iml" filepath="$PROJECT_DIR$/.idea/TeamToad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book-service/book-service.iml" filepath="$PROJECT_DIR$/book-service/book-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/book-system-service-registry/book-system-service-registry.iml" filepath="$PROJECT_DIR$/book-system-service-registry/book-system-service-registry.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-service/config-service.iml" filepath="$PROJECT_DIR$/config-service/config-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/note-queue-consumer/note-queue-consumer.iml" filepath="$PROJECT_DIR$/note-queue-consumer/note-queue-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/note-service/note-service.iml" filepath="$PROJECT_DIR$/note-service/note-service.iml" />
+    </modules>
+  </component>
+</project>

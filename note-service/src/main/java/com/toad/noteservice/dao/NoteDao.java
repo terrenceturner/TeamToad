@@ -6,17 +6,17 @@ import java.util.List;
 
 public interface NoteDao {
 
-    public Note addNote(Note note);
+     Note addNote(Note note);
 
-    public Note getNote(int id);
+     Note getNote(int id);
 
-    public List<Note> getAllNotes();
+     List<Note> getAllNotes();
 
-    public List<Note> getNotesByBookId(int id);
+     List<Note> getNotesByBookId(int id);
 
-    public void updateNote(Note note);
+     void updateNote(Note note);
 
-    public void deleteNote(int id);
+     void deleteNote(int id);
 
-    public void deleteAll();
+     void deleteAll();
 }

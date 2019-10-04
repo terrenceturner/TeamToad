@@ -43,7 +43,7 @@ public class BookController {
     }
 
     @PostMapping("/book")
-    public BookViewModel createBook(BookViewModel bvm){
+    public BookViewModel createBook(@RequestBody BookViewModel bvm){
         return service.createBook(bvm);
     }
 

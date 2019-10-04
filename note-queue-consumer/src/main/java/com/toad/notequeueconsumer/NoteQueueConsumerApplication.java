@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @EnableFeignClients
-@EnableDiscoveryClient
 public class NoteQueueConsumerApplication {
 
 	public static final String TOP_EXCHANGE_NAME = "note-exchange";

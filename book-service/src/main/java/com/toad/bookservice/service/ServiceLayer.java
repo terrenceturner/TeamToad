@@ -86,7 +86,7 @@ public class ServiceLayer {
     };
 
     public BookViewModel createBook(BookViewModel bvm){
-
+        System.out.println(bvm.toString());
         Book book = new Book();
         book.setAuthor(bvm.getAuthor());
         book.setTitle(bvm.getTitle());
@@ -95,6 +95,7 @@ public class ServiceLayer {
 
         Note note = new Note();
         note.setBookId(book.getBookId());
+        System.out.println(note.toString());
         note.setNote(bvm.getNote().getNote());
 
         //send note to queue

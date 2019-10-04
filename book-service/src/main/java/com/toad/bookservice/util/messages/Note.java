@@ -48,7 +48,7 @@ public class Note {
         Note note1 = (Note) o;
         return noteId == note1.noteId &&
                 bookId == note1.bookId &&
-                note.equals(note1.note);
+                Objects.equals(note, note1.note);
     }
 
     @Override
@@ -56,4 +56,12 @@ public class Note {
         return Objects.hash(noteId, bookId, note);
     }
 
+    @Override
+    public String toString() {
+        return "Note{" +
+                "noteId=" + noteId +
+                ", bookId=" + bookId +
+                ", note='" + note + '\'' +
+                '}';
+    }
 }

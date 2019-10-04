@@ -13,7 +13,6 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/notes")
 public class NoteServiceController {
 
     // Properties
